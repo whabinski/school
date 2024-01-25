@@ -1,0 +1,128 @@
+CS 2DB3
+Assignment 3
+Wyatt Habinski
+
+
+
+CREATE TABLE member
+(
+mid INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+email VARCHAR(200) UNIQUE,
+passhash VARCHAR(100) NOT NULL,
+name VARCHAR(200),
+address VARCHAR(300)
+);
+
+----------------------------------------------------------
+
+CREATE TABLE personal
+(
+mid INT NOT NULL PRIMARY KEY REFERENCES member(mid)
+);
+
+----------------------------------------------------------
+
+CREATE TABLE organization
+(
+mid INT NOT NULL PRIMARY KEY REFERENCES member(mid),
+type VARCHAR(200) NOT NULL
+);
+
+----------------------------------------------------------
+
+CREATE TABLE isRep
+(
+personal_mid INT NOT NULL REFERENCES personal(mid),
+organization_mid INT NOT NULL REFERENCES organization(mid),
+PRIMARY KEY(personal_mid, organization_mid)
+);
+
+----------------------------------------------------------
+
+CREATE TABLE subscription
+(
+mid INT NOT NULL REFERENCES member,
+startyear INT NOT NULL,
+startmonth INT NOT NULL,
+PRIMARY KEY(mid, startyear, startmonth)
+);
+
+----------------------------------------------------------
+
+CREATE TABLE prepaid
+(
+mid INT NOT NULL UNIQUE,
+startyear INT NOT NULL,
+startmonth INT NOT NULL,
+charges DECIMAL,
+FOREIGN KEY(mid, startyear, startmonth) REFERENCES subscription,
+PRIMARY KEY (mid, startyear, startmonth)
+);
+
+----------------------------------------------------------
+
+CREATE TABLE longterm
+(
+mid INT NOT NULL UNIQUE,
+startyear INT NOT NULL,
+startmonth INT NOT NULL,
+tier INT,
+FOREIGN KEY(mid, startyear, startmonth) REFERENCES subscription,
+PRIMARY KEY (mid, startyear, startmonth)
+);
+
+----------------------------------------------------------
+
+CREATE TABLE payment
+(
+mid INT NOT NULL UNIQUE,
+startyear INT NOT NULL,
+startmonth INT NOT NULL,
+term INT NOT NULL UNIQUE, 
+payBy INT REFERENCES personal,
+FOREIGN KEY(mid, startyear, startmonth) REFERENCES longterm,
+PRIMARY KEY (mid, startyear, startmonth, term)
+);
+
+----------------------------------------------------------
+
+CREATE TABLE donorevent
+(
+eid INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+name VARCHAR(200) NOT NULL,
+date DATE NOT NULL,
+description CLOB,
+private BOOLEAN NOT NULL
+);
+
+----------------------------------------------------------
+
+CREATE TABLE donorinvite
+(
+eid INT NOT NULL,
+mid INT NOT NULL REFERENCES member,
+confirmed BOOLEAN NOT NULL,
+amount INT,
+referredBy INT REFERENCES member,
+FOREIGN KEY(eid) REFERENCES donorevent,
+PRIMARY KEY(eid, mid)
+);
+
+----------------------------------------------------------
+
+
+CREATE TABLE donation
+(
+did INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+eid INT NOT NULL REFERENCES donorevent,
+mid INT NOT NULL REFERENCES member,
+amount DECIMAL NOT NULL,
+to_mid INT REFERENCES member,
+message CLOB
+);
+
+----------------------------------------------------------
+
+
+
+

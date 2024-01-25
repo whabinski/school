@@ -1,0 +1,18 @@
+ssh habinskw@cs2ga3.cas.mcmaster.ca -X
+cd qemu
+./start_qemu.sh
+
+open another term
+ssh habinskw@cs2ga3.cas.mcmaster.ca
+sh -p12097 pi@localhost
+password: raspBerry
+
+
+
+
+
+
+
+as - g problem1.S -o problem.o
+gcc -o problem1 problem1.S int_out.c
+ 

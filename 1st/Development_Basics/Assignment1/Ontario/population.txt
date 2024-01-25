@@ -1,0 +1,4 @@
+Province: Ontario Population Estimate: 8,631,147
+Province: Quebec Population Estimate: 14,915,270
+Province Alberta Population Estimate: 4,464,170
+Province British Columbia Population Estimate: 5,249,635
