@@ -1,0 +1,118 @@
+\hypertarget{student_8h}{}\section{student.\+h File Reference}
+\label{student_8h}\index{student.\+h@{student.\+h}}
+
+
+Student library for managing students. Contains student type definition student functions.  
+
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct__student}{\+\_\+student}}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct__student}{\+\_\+student}} \mbox{\hyperlink{student_8h_abcfb362c0eb3182c835992cf3d0c0dd3}{Student}}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{student_8h_a1ee4302d01d8908db57e238f5f9dd9f5}{add\+\_\+grade}} (\mbox{\hyperlink{student_8h_abcfb362c0eb3182c835992cf3d0c0dd3}{Student}} $\ast$student, double grade)
+\item 
+double \mbox{\hyperlink{student_8h_a3efb000301e4e0c8e68930bc93e0958e}{average}} (\mbox{\hyperlink{student_8h_abcfb362c0eb3182c835992cf3d0c0dd3}{Student}} $\ast$student)
+\item 
+void \mbox{\hyperlink{student_8h_a4d964bf73eb1b291728dbf7380a9e6ab}{print\+\_\+student}} (\mbox{\hyperlink{student_8h_abcfb362c0eb3182c835992cf3d0c0dd3}{Student}} $\ast$student)
+\item 
+\mbox{\hyperlink{student_8h_abcfb362c0eb3182c835992cf3d0c0dd3}{Student}} $\ast$ \mbox{\hyperlink{student_8h_a4aa2c655fdf24df90c3e85b18f605b9a}{generate\+\_\+random\+\_\+student}} (int grades)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Student library for managing students. Contains student type definition student functions. 
+
+\begin{DoxyAuthor}{Author}
+Wyatt Habinski 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2022-\/04-\/12 
+\end{DoxyDate}
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{student_8h_abcfb362c0eb3182c835992cf3d0c0dd3}\label{student_8h_abcfb362c0eb3182c835992cf3d0c0dd3}} 
+\index{student.\+h@{student.\+h}!Student@{Student}}
+\index{Student@{Student}!student.\+h@{student.\+h}}
+\subsubsection{\texorpdfstring{Student}{Student}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct__student}{\+\_\+student}}  \mbox{\hyperlink{student_8h_abcfb362c0eb3182c835992cf3d0c0dd3}{Student}}}
+
+Student type stores student\textquotesingle{}s firstname, lastname, ID, grades, and number of grades 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{student_8h_a1ee4302d01d8908db57e238f5f9dd9f5}\label{student_8h_a1ee4302d01d8908db57e238f5f9dd9f5}} 
+\index{student.\+h@{student.\+h}!add\+\_\+grade@{add\+\_\+grade}}
+\index{add\+\_\+grade@{add\+\_\+grade}!student.\+h@{student.\+h}}
+\subsubsection{\texorpdfstring{add\+\_\+grade()}{add\_grade()}}
+{\footnotesize\ttfamily void add\+\_\+grade (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{student_8h_abcfb362c0eb3182c835992cf3d0c0dd3}{Student}} $\ast$}]{student,  }\item[{double}]{grade }\end{DoxyParamCaption})}
+
+Adds a grade to the students grades. If its the student\textquotesingle{}s first grade, use calloc Otherwise use realloc
+
+
+\begin{DoxyParams}{Parameters}
+{\em student} & \\
+\hline
+{\em grade} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nothing 
+\end{DoxyReturn}
+\mbox{\Hypertarget{student_8h_a3efb000301e4e0c8e68930bc93e0958e}\label{student_8h_a3efb000301e4e0c8e68930bc93e0958e}} 
+\index{student.\+h@{student.\+h}!average@{average}}
+\index{average@{average}!student.\+h@{student.\+h}}
+\subsubsection{\texorpdfstring{average()}{average()}}
+{\footnotesize\ttfamily double average (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{student_8h_abcfb362c0eb3182c835992cf3d0c0dd3}{Student}} $\ast$}]{student }\end{DoxyParamCaption})}
+
+Returnts the students total average of all their grades
+
+
+\begin{DoxyParams}{Parameters}
+{\em student} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double 
+\end{DoxyReturn}
+$<$ Loops through all student\textquotesingle{}s grades \mbox{\Hypertarget{student_8h_a4aa2c655fdf24df90c3e85b18f605b9a}\label{student_8h_a4aa2c655fdf24df90c3e85b18f605b9a}} 
+\index{student.\+h@{student.\+h}!generate\+\_\+random\+\_\+student@{generate\+\_\+random\+\_\+student}}
+\index{generate\+\_\+random\+\_\+student@{generate\+\_\+random\+\_\+student}!student.\+h@{student.\+h}}
+\subsubsection{\texorpdfstring{generate\+\_\+random\+\_\+student()}{generate\_random\_student()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{student_8h_abcfb362c0eb3182c835992cf3d0c0dd3}{Student}}$\ast$ generate\+\_\+random\+\_\+student (\begin{DoxyParamCaption}\item[{int}]{grades }\end{DoxyParamCaption})}
+
+Generates a random new student type Picks a random first name from list of 24, picks random last name from list of 24 Generates a random ID Generates random grades to be added based on parameter
+
+
+\begin{DoxyParams}{Parameters}
+{\em grades} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Student$\ast$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{student_8h_a4d964bf73eb1b291728dbf7380a9e6ab}\label{student_8h_a4d964bf73eb1b291728dbf7380a9e6ab}} 
+\index{student.\+h@{student.\+h}!print\+\_\+student@{print\+\_\+student}}
+\index{print\+\_\+student@{print\+\_\+student}!student.\+h@{student.\+h}}
+\subsubsection{\texorpdfstring{print\+\_\+student()}{print\_student()}}
+{\footnotesize\ttfamily void print\+\_\+student (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{student_8h_abcfb362c0eb3182c835992cf3d0c0dd3}{Student}} $\ast$}]{student }\end{DoxyParamCaption})}
+
+Prints student\textquotesingle{}s name, ID, grades, and total average
+
+
+\begin{DoxyParams}{Parameters}
+{\em student} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nothing 
+\end{DoxyReturn}
+$<$ Loops through all students grades 

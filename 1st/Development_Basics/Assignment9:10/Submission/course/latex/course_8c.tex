@@ -1,0 +1,106 @@
+\hypertarget{course_8c}{}\section{course.\+c File Reference}
+\label{course_8c}\index{course.\+c@{course.\+c}}
+
+
+course library for managing courses, incluing definitions of course functions  
+
+
+{\ttfamily \#include \char`\"{}course.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{course_8c_af3abbc650ef56ffff427a62dad63fc77}{enroll\+\_\+student}} (\mbox{\hyperlink{course_8h_af02bfd4f408ee8d049539f8e9e5a3b2c}{Course}} $\ast$course, \mbox{\hyperlink{student_8h_abcfb362c0eb3182c835992cf3d0c0dd3}{Student}} $\ast$student)
+\item 
+void \mbox{\hyperlink{course_8c_a99bf8b3f3c2d5dc7cf798ed445eaaa77}{print\+\_\+course}} (\mbox{\hyperlink{course_8h_af02bfd4f408ee8d049539f8e9e5a3b2c}{Course}} $\ast$course)
+\item 
+\mbox{\hyperlink{student_8h_abcfb362c0eb3182c835992cf3d0c0dd3}{Student}} $\ast$ \mbox{\hyperlink{course_8c_ae0130f7ef7b879c9a790ee27a5ce21b7}{top\+\_\+student}} (\mbox{\hyperlink{course_8h_af02bfd4f408ee8d049539f8e9e5a3b2c}{Course}} $\ast$course)
+\item 
+\mbox{\hyperlink{student_8h_abcfb362c0eb3182c835992cf3d0c0dd3}{Student}} $\ast$ \mbox{\hyperlink{course_8c_a3f939f002e675839379b8d2dff044162}{passing}} (\mbox{\hyperlink{course_8h_af02bfd4f408ee8d049539f8e9e5a3b2c}{Course}} $\ast$course, int $\ast$total\+\_\+passing)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+course library for managing courses, incluing definitions of course functions 
+
+\begin{DoxyAuthor}{Author}
+Wyatt Habinski 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2022-\/04-\/12 
+\end{DoxyDate}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{course_8c_af3abbc650ef56ffff427a62dad63fc77}\label{course_8c_af3abbc650ef56ffff427a62dad63fc77}} 
+\index{course.\+c@{course.\+c}!enroll\+\_\+student@{enroll\+\_\+student}}
+\index{enroll\+\_\+student@{enroll\+\_\+student}!course.\+c@{course.\+c}}
+\subsubsection{\texorpdfstring{enroll\+\_\+student()}{enroll\_student()}}
+{\footnotesize\ttfamily void enroll\+\_\+student (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{course_8h_af02bfd4f408ee8d049539f8e9e5a3b2c}{Course}} $\ast$}]{course,  }\item[{\mbox{\hyperlink{student_8h_abcfb362c0eb3182c835992cf3d0c0dd3}{Student}} $\ast$}]{student }\end{DoxyParamCaption})}
+
+Adds a student to the course. Updates total number of students in course Uses calloc if its the first student in the course Otherwise uses realloc
+
+
+\begin{DoxyParams}{Parameters}
+{\em course} & \\
+\hline
+{\em student} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nothing 
+\end{DoxyReturn}
+\mbox{\Hypertarget{course_8c_a3f939f002e675839379b8d2dff044162}\label{course_8c_a3f939f002e675839379b8d2dff044162}} 
+\index{course.\+c@{course.\+c}!passing@{passing}}
+\index{passing@{passing}!course.\+c@{course.\+c}}
+\subsubsection{\texorpdfstring{passing()}{passing()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{student_8h_abcfb362c0eb3182c835992cf3d0c0dd3}{Student}}$\ast$ passing (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{course_8h_af02bfd4f408ee8d049539f8e9e5a3b2c}{Course}} $\ast$}]{course,  }\item[{int $\ast$}]{total\+\_\+passing }\end{DoxyParamCaption})}
+
+Returns an array of students that are passing the course Also updates the number of total students passing the course
+
+
+\begin{DoxyParams}{Parameters}
+{\em course} & \\
+\hline
+{\em total\+\_\+passing} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Student$\ast$ 
+\end{DoxyReturn}
+$<$ loops through all student in the course
+
+$<$ loops through all student in the course \mbox{\Hypertarget{course_8c_a99bf8b3f3c2d5dc7cf798ed445eaaa77}\label{course_8c_a99bf8b3f3c2d5dc7cf798ed445eaaa77}} 
+\index{course.\+c@{course.\+c}!print\+\_\+course@{print\+\_\+course}}
+\index{print\+\_\+course@{print\+\_\+course}!course.\+c@{course.\+c}}
+\subsubsection{\texorpdfstring{print\+\_\+course()}{print\_course()}}
+{\footnotesize\ttfamily void print\+\_\+course (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{course_8h_af02bfd4f408ee8d049539f8e9e5a3b2c}{Course}} $\ast$}]{course }\end{DoxyParamCaption})}
+
+Prints the course name, code, total number of students in the course, and prints each student in the course
+
+
+\begin{DoxyParams}{Parameters}
+{\em course} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nothing 
+\end{DoxyReturn}
+\mbox{\Hypertarget{course_8c_ae0130f7ef7b879c9a790ee27a5ce21b7}\label{course_8c_ae0130f7ef7b879c9a790ee27a5ce21b7}} 
+\index{course.\+c@{course.\+c}!top\+\_\+student@{top\+\_\+student}}
+\index{top\+\_\+student@{top\+\_\+student}!course.\+c@{course.\+c}}
+\subsubsection{\texorpdfstring{top\+\_\+student()}{top\_student()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{student_8h_abcfb362c0eb3182c835992cf3d0c0dd3}{Student}}$\ast$ top\+\_\+student (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{course_8h_af02bfd4f408ee8d049539f8e9e5a3b2c}{Course}} $\ast$}]{course }\end{DoxyParamCaption})}
+
+Returns the student with the highest grade average in the course
+
+
+\begin{DoxyParams}{Parameters}
+{\em course} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Student$\ast$ 
+\end{DoxyReturn}
+$<$ loops through all students in the course 

@@ -1,0 +1,18 @@
+/nix/store/yp6bdns7myc5fhz5f6nhvfy1dv15wrkp-ghc-8.8.4/lib/ghc-8.8.4/include/ghcversion.h:
+  hash: 297e8571427d670d413977834f5cdfc77cb89051d2f5b8302303c442346d15d0
+/home/dalvescb/Repos/1JC3_Spring2021/assign-templates/1JC3-Assign1/package.yaml:
+  hash: 32c27b8c50013b025161a76ab3ece866b14d209b088ba35dad0406df9cf4a26d
+/home/dalvescb/Repos/1JC3_Spring2021/assign-templates/1JC3-Assign1/README.md:
+  hash: 0c95ca536d789ffa92601e7d3ccf9730dde7343a33778cbd71e8e9ca2a89d74f
+? /home/dalvescb/Repos/1JC3_Spring2021/assign-templates/1JC3-Assign1/.stack-work/dist/x86_64-linux-nix/Cabal-3.0.1.0/build/autogen/Paths_1JC3_Assign1.hs
+: hash: 446ce51dba3913396a4c51f8d889500c34875d1e914c3180fc7952feb386c254
+? /home/dalvescb/Repos/1JC3_Spring2021/assign-templates/1JC3-Assign1/.stack-work/dist/x86_64-linux-nix/Cabal-3.0.1.0/build/autogen/cabal_macros.h
+: hash: 5f6d4c39d8ee5eff655dee1a88c362b3267c81d7e5f2494303e42b1898eefcfe
+/home/dalvescb/Repos/1JC3_Spring2021/assign-templates/1JC3-Assign1/1JC3-Assign1.cabal:
+  hash: 46f0c16067110161b33cddfe2d1839394b8d6d2a77921ae6b9a30278d097cb40
+/home/dalvescb/Repos/1JC3_Spring2021/assign-templates/1JC3-Assign1/ChangeLog.md:
+  hash: a1ba6066b7a589a4899325c19a1113fc7dd5e97f1f07c056a9d61297b44cabf0
+/nix/store/iwd8ic5hhwdxn5dga0im55g5hjl270cd-glibc-2.33-47-dev/include/stdc-predef.h:
+  hash: 38bac01c137da3ec6623c5166d420cd0bdee18e1d6605921f138f74ef902f102
+/home/dalvescb/Repos/1JC3_Spring2021/assign-templates/1JC3-Assign1/src/Assign_1.hs:
+  hash: d053df3026dce3a69af2ef0388658af0b08072ea2c3f18559b92d3ed84ca5447
