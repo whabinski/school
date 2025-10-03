@@ -1,0 +1,106 @@
+Build a Support Vector Machine (SVM) Classification model to reliably classify data
+samples corresponding to Malignant and Benign tumors. A preliminary boilerplate code has
+been provided to you. This was also shared with you during week 3 when we discussed SVM.
+Your goal is to augment that code using a regularization technique within SVM. We have
+discussed L1 and L2 regularization techniques in class. Another popular regularization
+technique is early stopping, which limits the number of iterations while training the model.
+Early stopping is implemented as follows:
+    1. Execute gradient descent for 1 iteration.
+    2. Compute loss using the model’s loss function.
+    3. Compare loss for the current iteration with loss in the previous iteration.
+    4. If the difference is beyond a specified loss threshold, go to step 1, otherwise stop the gradient descent process.
+
+In this part of the assignment, implement 
+    1) early stopping for the given SVM classifier (lines 103 onwards in boilerplate), 
+    2) along with SVM’s loss function (lines 76-80 in boilerplate). The function stochastic_gradient_descent() must 
+    print the number of iterations your early stopping algorithm takes to achieve optimal performance. 
+    The output of this part should be 
+            1) the loss function plotted for every 1/10 th of the epoch (e.g. if your epoch size is
+            5000, plot the loss after every 500th iteration) for both training loss and validation loss, 
+            2) the accuracy of your model performance on a held-out validation set. This time, you will select
+            your own held-out validation set, which should be at least 20% the size of the complete
+            dataset selected through random sampling (do not hard code this part). How to plot the
+            validation loss? First, train the model for 1 iteration, and then compute the loss using the
+            predicted values and actual values of the observations in held-out validation set for that
+            model. Repeat the process for all epochs. Therefore, in summary, you validate the model as
+            you train it.
+
+A successful early-stopping algorithm will reach the lowest possible train error before it
+plateaus or validation loss increases. This means, your training function must also plot your
+train and validation loss, well beyond your stopping iterations to verify whether your early
+stopping algorithm is yielding appropriate performance. You must also carefully select the
+loss threshold that aligns with your loss function. This number is typically of the magnitude
+of 10-2 or 10-3 , but it largely depends on how you are computing the loss. You may also
+increase the window of comparison to improve your algorithm, i.e. instead of comparing with
+the previous iteration, you may compare with 2 nd previous iteration.
+
+
+
+
+
+
+
+
+
+
+Build a Support Vector Machine (SVM) Classification model to reliably classify data
+samples corresponding to Malignant and Benign tumors using mini-batch stochastic
+gradient descent. Therefore, instead of training 1 sample at a time, you should compute
+gradient descent over a small batch size of 𝑛 samples. You are free to select 𝑛 for optimal
+performance. Remember that in mini-batch gradient descent, the loss is computed by
+averaging the loss for that batch of 𝑛 samples; everything else remains the same (same loss
+function, and gradient function). To optimize the performance of your minibatch, you may re-
+configure the model parameters, if necessary.
+
+Show the performance metrics for minibatch gradient descent compared with stochastic
+gradient descent, in terms of accuracy, precision, recall (you need to implement these at line
+142), and plotting the train and validation losses. The output of this part should be 
+    1) loss function plotted for every 1/10th of the epoch (e.g. if your epoch size is 5000, plot the loss
+    after every 500th iteration) showing both training loss and validation loss for stochastic
+    gradient descent (computed in Part 1) and minibatches (computed in this part), 
+    2) the final accuracy, precision, recall of your model performance on a held-out validation set. Use the
+    same held-out test set as Part 1.
+
+
+
+
+
+
+
+
+Goal: Build a Support Vector Machine (SVM) Classification model that can reliably classify
+data samples corresponding to Malignant and Benign tumors using the smallest number of
+samples. In class, we have discussed how di`erent data sampling strategies like
+uncertainty sampling can help us minimize the cost of training. The goal of data sampling
+strategies is to select instances strategically around the decision boundary that best
+represents the dataset. In this part, you will attempt to integrate an active learning strategy
+in Support of Vector Machines. This technique was first proposed in 2000 at ICML, a premier
+venue for state-of-the-art ML research. The sampling strategy you will implement, which is a
+simplified version of the originally proposed strategy, goes something like this:
+    1. Consider an SVM classifier that has just been trained on a few labeled data (n), where
+        n is a subset of the full dataset N. You may select the first n samples randomly.
+    2. We assume that the rest of the N-n dataset is not labeled yet, and it is uncorrelated
+        to the predicted labels. This means, you may use the existing labels and need not
+        gather new labels. But instead of training the model on all data instances, you will
+        train them on a small subset of data instances.
+    3. Using the initially trained classifier, find the sample for which we get the smallest
+        SVM loss (note that you have already implemented this loss function)
+    4. Use this sample to train the classifier further. You may use both stochastic or mini-
+        batch GD for this task.
+
+Implement the sampling strategy at line 133. For the main algorithm for training in part_3( ),
+you can use the following steps:
+    1. Train an initial classifier with random samples.
+    2. Perform prediction on all remaining samples.
+    3. Select the next probable sample, using the above sampling strategy.
+    4. Train the classifier further.
+    5. Repeat steps 2 – 4, till you get a satisfactory performance.
+
+The output of this part should be 
+    1) loss function plotted for every 1/10th of the epoch (e.g. if your epoch size is 5000, 
+        plot the loss after every 500 th iteration) showing both training loss
+        and validation loss for gradient descent (computed after every training iteration), 
+    2) the final accuracy, precision, recall of your model performance on a held-out validation set. 
+        Use the same held-out test set as Part 1,
+    3) the number of samples you used for getting the optimal performance. 
+    (You may also try flipping step 3, instead of the smallest, use the largest error sample to see what happens)
